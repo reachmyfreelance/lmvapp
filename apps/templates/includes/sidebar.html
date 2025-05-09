@@ -1,0 +1,90 @@
+<!-- [ navigation menu ] start -->
+<nav class="pcoded-navbar">
+    <div class="navbar-wrapper">
+        <div class = "d-flex"><div class="navbar-brand header-logo">
+            <!-- <a class = "menu-icon" id="mobile-collapse" href="javascript:"><i class = "feather icon-menu"></i></a> -->
+            <a class = "menu-icon" id="mobile-collapse" href="/index"><img src = "{{config.ASSETS_ROOT }}/images/sharvahanlogo.jpg" height="50px"></i></a>
+
+        </div>
+        
+    </div>
+        <div class="navbar-content scroll-div">
+
+            <ul class="nav pcoded-inner-navbar">
+                <!-- <li class="nav-item pcoded-menu-caption">
+                    <label>Navigation</label>
+                </li> -->
+                <li data-username="dashboard Default Ecommerce CRM Analytics Crypto Project" 
+                    class="nav-item {% if 'index' in segment %} active {% endif %}">
+                    <a href="/" class="nav-link "><span class="pcoded-micon"><i class="feather icon-home"></i></span><span
+                            class="pcoded-mtext">Dashboard</span></a>
+                </li>
+                <li data-username="Profile Page" 
+                    class="nav-item {% if 'profile' in segment %} active {% endif %}">
+                    <a href="/profile.html" class="nav-link">
+                        <span class="pcoded-micon"><i class="feather pcoded-mtext icon-user"></i></span>
+                            <span class="pcoded-mtext">Profile Page</span></a>
+                </li>                
+                <!-- <li class="nav-item pcoded-menu-caption">
+                    <label>UI Element</label>
+                </li> -->
+                
+                <li class="nav-item pcoded-menu-caption">
+                    <label>Master Data</label>
+                </li>
+                
+                <li data-username="Table bootstrap datatable footable" 
+                    class="nav-item {% if 'tbl_vehicles' in segment %} active {% endif %}">
+                    <a href="/vehicles" class="nav-link "><span class="pcoded-micon"><i
+                            class="pcoded-mtext feather icon-user"></i></span><span class="pcoded-mtext">Vehicles</span></a>
+                </li>
+                <li data-username="Table bootstrap datatable footable" 
+                    class="nav-item {% if 'tbl_drivers' in segment %} active {% endif %}">
+                    <a href="/drivers" class="nav-link "><span class="pcoded-micon"><i
+                            class="pcoded-mtext feather icon-user"></i></span><span class="pcoded-mtext">Drivers</span></a>
+                </li>
+                <li data-username="Table bootstrap datatable footable" 
+                class="nav-item {% if 'tbl_cards' in segment %} active {% endif %}">
+                <a href="/cards" class="nav-link "><span class="pcoded-micon"><i
+                        class="pcoded-mtext feather icon-credit-card"></i></span><span class="pcoded-mtext">Cards</span></a>
+            </li>
+                <li class="nav-item pcoded-menu-caption">
+                    <label>Reports</label>
+                </li>
+                <li data-username="Table bootstrap datatable footable" 
+                class="nav-item {% if 'tbl_trips' in segment %} active {% endif %}">
+                <a href="/trips" class="nav-link "><span class="pcoded-micon"><i
+                        class="pcoded-mtext feather icon-list"></i></span><span class="pcoded-mtext">Trips</span></a>
+                <li data-username="Table bootstrap datatable footable" 
+                class="nav-item {% if 'tbl_fuellogs' in segment %} active {% endif %}">
+                <a href="/fuellogs" class="nav-link "><span class="pcoded-micon"><i
+                        class="pcoded-mtext feather icon-list"></i></span><span class="pcoded-mtext">Fuel Logs</span></a>
+            </li>
+            
+                <!-- <li data-username="Charts Morris" 
+                    class="nav-item {% if 'chart-morris' in segment %} active {% endif %}">
+                    <a href="/chart-morris.html" class="nav-link "><span
+                        class="pcoded-micon"><i class="feather icon-pie-chart"></i></span><span class="pcoded-mtext">Chart</span></a>
+                </li> -->
+               
+                <li data-username="Disabled Menu" class="nav-item">
+                    <a href="{{ url_for('authentication_blueprint.logout') }}" class="nav-link">
+                        <span class="pcoded-micon"><i class="pcoded-mtext feather icon-power"></i></span><span class="pcoded-mtext">Logout</span>
+                    </a>
+                </li>
+                <li class="nav-item pcoded-menu-caption">
+                    <label>More Resources</label>
+                </li>                    
+                <li data-username="Support Page" class="nav-item ">
+                    <a href="/support.html" class="nav-link">
+                        <span class="pcoded-micon">
+                            <i class="pcoded-mtext feather icon-headphones"></i>
+                        </span>
+                        <span class="pcoded-mtext">Support</span>
+                    </a>
+                </li>                
+            </ul>
+        </div>
+    </div>
+</nav>
+<!-- [ navigation menu ] end -->

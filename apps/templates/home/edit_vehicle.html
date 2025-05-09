@@ -1,0 +1,119 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} UI Forms {% endblock %} 
+
+<!-- Specific CSS goes HERE -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+
+    <!-- [ Main Content ] start -->
+    <div class="pcoded-main-container">
+        <div class="pcoded-wrapper">
+
+            <div class="pcoded-content">
+                <div class="pcoded-inner-content">
+                    <!-- [ breadcrumb ] start -->
+                    <div class="page-header">
+                        <div class="page-block">
+                            <div class="row align-items-center">
+                                <div class="col-md-12">
+                                    <div class="page-header-title">
+                                        <h5 class="m-b-10">Vehicles</h5>
+                                    </div>
+                                    <ul class="breadcrumb">
+                                        <li class="breadcrumb-item"><a href="/"><i class="feather icon-home"></i></a></li>
+                                        <li class="breadcrumb-item"><a href="/vehicles">Vehicles</a></li>
+                                        <li class="breadcrumb-item"><a href="javascript:">Add Vehicle</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- [ breadcrumb ] end -->
+                    <div class="main-body">
+                        <div class="page-wrapper">
+                            <!-- [ Main Content ] start -->
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <h5>Edit Vehicle</h5>
+                                            <hr>
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <form action="/vehicles/update/{{vehicle.id}}" method='POST' enctype="multipart/form-data">
+                                                        <div class="form-group">
+                                                            <label for="make">Make</label><span class = "mand-asterisk">*</span>
+                                                            <input type="name" required class="form-control" id="make" name = "make" aria-describedby="emailHelp" placeholder="Enter Make of the Vehicle" value="{{vehicle.make}}">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label for="model">Model</label><span class = "mand-asterisk">*</span>
+                                                            <input type="name" required class="form-control" id="model" name="model" placeholder="Enter Model of the Vehicle" value="{{vehicle.model}}">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label for="model">Fuel Type</label><span class = "mand-asterisk">*</span>
+                                                            <input type="name" class="form-control" id="model" name="fuel_type" placeholder="Enter Model of the Vehicle" value="{{vehicle.fuel_type}}">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label for="model">Tank Capacity in Litres</label><span class = "mand-asterisk">*</span>
+                                                            <input type="name" class="form-control" id="model" name="tank_cap" placeholder="Enter Model of the Vehicle" value ="{{vehicle.tank_cap}}">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label>Registration Number</label><span class = "mand-asterisk">*</span>
+                                                            <input type="text" required class="form-control" id="regn_no" name="regn_no" placeholder="Enter Regn No." value="{{vehicle.regn_no}}">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label>Chassis Number</label><span class = "mand-asterisk">*</span>
+                                                            <input type="text" required class="form-control" id="chassis_no" name="chassis_no" placeholder="Enter Chassis No.">
+                                                        </div>
+                                                        <button type="submit" class="btn btn-primary">Submit</button>
+                                                </div>
+                                                <div class="col-md-6">
+                                
+                                                        <div class="form-group">
+                                                            <label>Engine Number</label><span class = "mand-asterisk">*</span>
+                                                            <input type="text" required class="form-control" id="engine_no" name="engine_no" placeholder="Enter Engine No.">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label>Upload Registration Certificate Front</label><span class = "mand-asterisk">*</span><span class="float-right"><a href="{{vehicle.regn_image_front}}" target="_blank">{% if(vehicle.regn_image_front) %}View Existing Document{% endif %}</a></span>
+                                                            <input type="file" id="files" name="files" class="form-control" placeholder="Enter Regn Image.">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label>Upload Registration Certificate Back</label><span class = "mand-asterisk">*</span><span class="float-right"><a href="{{vehicle.regn_image_back}}" target="_blank">{% if(vehicle.regn_image_back) %}View Existing Document{% endif %}</a></span>
+                                                            <input type="file" id="files" name="files" class="form-control" placeholder="Enter Regn No.">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label>Upload Insurance Copy</label><span class = "mand-asterisk">*</span><span class="float-right"><a href="{{vehicle.insurance_image}}" target="_blank">{% if(vehicle.insurance_image) %}View Existing Document{% endif %}</a></span>
+                                                            <input type="file" id="files" name="files" class="form-control" placeholder="Enter Insurance No.">
+                                                        </div>
+                                                        <div class="form-group d-flex">
+                                                            <label>Insurance Expiry Date</label><span class = "mand-asterisk" style="padding-right: 15%;">*</span><p></p>
+                                                            <input type="date" id="ins_expiry" name="ins_expiry" class="form-control" style="width: auto;">
+                                                        </div>
+
+                                                        <div class="form-group">
+                                                            <label>Upload Pollution Certificate</label><span class = "mand-asterisk">*</span><span class="float-right"><a href="{{vehicle.pollution_image}}" target="_blank">{% if(vehicle.pollution_image) %}View Existing Document{% endif %}</a></span>
+                                                            <input type="file" id="files" name="files" class="form-control" placeholder="Enter Regn No.">
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                            
+                                    </div>
+                                    
+                            </div>
+                            <!-- [ Main Content ] end -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    <!-- [ Main Content ] end -->
+
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}{% endblock javascripts %}

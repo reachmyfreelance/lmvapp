@@ -1,0 +1,355 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} Dashboard {% endblock %} 
+
+<!-- Specific CSS goes HERE -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+
+    <!-- [ Main Content ] start -->
+    <div class="pcoded-main-container">
+        <div class="pcoded-wrapper">
+
+            <div class="pcoded-content">
+
+                <div class="pcoded-inner-content">
+                    <!-- [ breadcrumb ] start -->
+
+                    <!-- [ breadcrumb ] end -->
+                    <div class="main-body">
+                        <div class="page-wrapper">
+                            <!-- [ Main Content ] start -->
+                            
+                            <h5>Overview</h5>
+                            <div class="d-flex">
+                            <div class="col-xl-6">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h5>Driver Performance Chart</h5>
+                                    </div>
+                                    <div class="card-block">
+                                        <div id="driver-performance-chart" style="height:300px"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-6">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h5>Vehicle Performance Chart</h5>
+                                    </div>
+                                    <div class="card-block">
+                                        <div id="vehicle-performance-chart" style="height:300px"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                            <div class="row">
+                                <!-- <div class="col-md-6 col-xl-4">
+                                    <div class="card daily-sales">
+                                        <div class="card-block">
+                                            <h6 class="mb-4">Active Vehicles</h6>
+                                            <div class="row d-flex align-items-center">
+                                                <div class="col-9">
+                                                    <h3 class="f-w-300 d-flex align-items-center m-b-0">
+                                                        {{vehicle_count}}</h3>
+                                                </div>  
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-xl-4">
+                                    <div class="card daily-sales">
+                                        <div class="card-block">
+                                            <h6 class="mb-4">Active Drivers</h6>
+                                            <div class="row d-flex align-items-center">
+                                                <div class="col-9">
+                                                    <h3 class="f-w-300 d-flex align-items-center m-b-0">
+                                                        {{driver_count}}</h3>
+                                                </div>  
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-xl-4">
+                                    <div class="card daily-sales">
+                                        <div class="card-block">
+                                            <h6 class="mb-4">Active Fuel Crads</h6>
+                                            <div class="row d-flex align-items-center">
+                                                <div class="col-9">
+                                                    <h3 class="f-w-300 d-flex align-items-center m-b-0">
+                                                        {{card_count}}</h3>
+                                                </div>  
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div> -->
+                                <!--[ year  sales section ] end-->
+                                <!--[ Recent Users ] start-->
+                            </div>
+                            <h5>Weekly</h5>
+                            <div class='row'>
+                                <div class="col-md-6 col-xl-4">
+                                    <div class="card daily-sales">
+                                        <div class="card-block" style="background-color: #ac3e31;">
+                                            <h6 class="mb-4">Distance Covered in Kms</h6>
+                                            <div class="row d-flex align-items-center">
+                                                <div class="col-9">
+                                                    <h3 class="f-w-300 d-flex align-items-center m-b-0">
+                                                        {{distance_weekly}}</h3>
+                                                </div>  
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--[ Actvie Vehicles ] end-->
+                                <!--[ Active Drivers ] starts-->
+                                <div class="col-md-6 col-xl-4">
+                                    <div class="card daily-sales">
+                                        <div class="card-block" style="background-color: #1c4e80;">
+                                            <h6 class="mb-4">Fuel Consumed in Litres</h6>
+                                            <div class="row d-flex align-items-center">
+                                                <div class="col-9">
+                                                    <h3 class="f-w-300 d-flex align-items-center m-b-0">
+                                                        {{fuel_weekly}}</h3>
+                                                </div>  
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--[ Total Acive Drivers ] end-->
+                                <!--[ Fuel cards section ] starts-->
+                                <div class="col-md-6 col-xl-4">
+                                    <div class="card daily-sales">
+                                        <div class="card-block" style="background-color: #1f3f49;">
+                                            <h6 class="mb-4">Average Fuel Efficiency in Kms/Litre</h6>
+                                            <div class="row d-flex align-items-center">
+                                                <div class="col-9">
+                                                    <h3 class="f-w-300 d-flex align-items-center m-b-0">
+                                                        {{average_weekly}}</h3>
+                                                </div>  
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <h5>Monthly</h5>
+                            <div class='row'>
+                                <div class="col-md-6 col-xl-4">
+                                    <div class="card daily-sales">
+                                        <div class="card-block"  style="background-color: #d32d41;">
+                                            <h6 class="mb-4">Distance Covered in Kms</h6>
+                                            <div class="row d-flex align-items-center">
+                                                <div class="col-9">
+                                                    <h3 class="f-w-300 d-flex align-items-center m-b-0">
+                                                        {{distance_monthly}}</h3>
+                                                </div>  
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--[ Actvie Vehicles ] end-->
+                                <!--[ Active Drivers ] starts-->
+                                <div class="col-md-6 col-xl-4">
+                                    <div class="card daily-sales">
+                                        <div class="card-block"  style="background-color: #4cb5f5;">
+                                            <h6 class="mb-4">Fuel Consumed in Litres</h6>
+                                            <div class="row d-flex align-items-center">
+                                                <div class="col-9">
+                                                    <h3 class="f-w-300 d-flex align-items-center m-b-0">
+                                                        {{fuel_monthly}}</h3>
+                                                </div>  
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--[ Total Acive Drivers ] end-->
+                                <!--[ Fuel cards section ] starts-->
+                                <div class="col-md-6 col-xl-4">
+                                    <div class="card daily-sales">
+                                        <div class="card-block"  style="background-color: #6ab187;">
+                                            <h6 class="mb-4">Average Fuel Efficiency in Kms/Litre</h6>
+                                            <div class="row d-flex align-items-center">
+                                                <div class="col-9">
+                                                    <h3 class="f-w-300 d-flex align-items-center m-b-0">
+                                                        {{average_monthly}}</h3>
+                                                </div>  
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                                <!-- <div class="col-xl-12 col-md-6">
+                                    <div class="card Recent-Users">
+                                        <div class="card-header">
+                                            <h5>Recent Users</h5>
+                                        </div>
+                                        <div class="card-block px-0 py-3">
+                                            <div class="table-responsive">
+                                                <table class="table table-hover">
+                                                    <tbody>
+                                                        {% for trip in trips %}
+                                                        <tr class="unread">
+                                                        <td><img class="rounded-circle" style="width:40px;"
+                                                                    src="{{ config.ASSETS_ROOT }}/images/user/avatar-2.jpg" alt="activity-user">
+                                                        </td>
+                                                        <td>
+                                                            <h6 class="mb-1">{{trip.driver_id}}</h6>
+                                                            <p class="m-0">{{trip.starttime}}</p>
+                                                        </td>
+                                                        <td>
+                                                            <h6 class="text-muted"><i
+                                                                    class="fas fa-circle text-c-green f-10 m-r-15"></i>{{trip.vehicle_id}}</h6>
+                                                        </td>
+                                                        <td><a href="#!"
+                                                                class="label theme-bg2 text-white f-12">Reject</a><a
+                                                                href="#!" class="label theme-bg text-white f-12">Approve</a>
+                                                        </td>
+                                                    </tr>
+                                                    {% endfor %}
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div> -->
+                                <!--[ Recent Users ] end-->
+
+                               
+                                
+                            <!-- [ Main Content ] end -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- [ Main Content ] end -->            
+
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}
+<script src="{{ config.ASSETS_ROOT }}/plugins/chart-morris/js/raphael.min.js"></script>
+<script src="{{ config.ASSETS_ROOT }}/plugins/chart-morris/js/morris.min.js"></script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        try{
+        var performanceData = JSON.parse('{{ performance_data | tojson | safe }}');
+        var vehicleperformanceData = JSON.parse('{{ vehicle_performance_data | tojson | safe }}');
+        }
+        catch (e){
+            console.log(e);
+        }
+        var formattedData = performanceData.map(item => ({
+            y: `${item.driver_id}`,
+            x: item.performance
+        }));
+
+        var vehicleformattedData = vehicleperformanceData.map(item => ({
+            b: `${item.vehicle_id}`,
+            a: item.performance
+        }));
+
+
+        new Morris.Bar({
+            element: 'driver-performance-chart',
+            data: formattedData,
+            xkey: 'y',
+            ykeys: 'x',
+            xLabelAngle: 45,
+            labels: ['Performance (km/l)'],
+            barColors: ['#1E88E5'],
+            hideHover: 'auto',
+            resize: true,
+            horizontal: false  // Flip chart to show driver IDs on Y-axis
+            
+        });
+        new Morris.Bar({
+            element: 'vehicle-performance-chart',
+            data: vehicleformattedData,
+            xkey: 'b',
+            ykeys: 'a',
+            xLabelAngle: 45,
+            labels: ['Performance (km/l)'],
+            barColors: ['#1E88E5'],
+            hideHover: 'auto',
+            resize: true,
+            horizontal: false  // Flip chart to show driver IDs on Y-axis
+            
+        });
+    });
+    var pending_drivers = JSON.parse('{{ pending_drivers | tojson | safe }}');
+
+        let notification_count = "";
+        const notiWidget = document.getElementById('noti-widget');
+        const notificationCount = document.getElementById('notification-count');
+        const driverName = document.getElementById('driver-name');
+        const showAllLink = document.getElementById('show-link');
+        // Reset previous state
+        notificationCount.innerText = "";
+        driverName.innerText = "";
+        notiWidget.style.display = 'none';
+        showAllLink.href = "#";
+        console.log(pending_drivers)
+        // ✅ If response contains a 'message' key → Handle gracefully
+        if (pending_drivers.message) {
+            console.log("API Message:", pending_drivers.message);
+            notification_count = "0"; // No drivers
+        } else{
+            // ✅ Handle when data is a valid array
+            const driversLength = pending_drivers.pending_drivers.length;
+            console.log(driversLength)
+            if (driversLength === 0) {
+                notification_count = "0"; // No drivers
+            } else if (driversLength === 1) {
+                notification_count = "1"; // Exactly one driver
+                driverName.innerText = pending_drivers.pending_drivers[0].name;
+                if (pending_drivers.pending_drivers[0].id) {
+                    showAllLink.addEventListener('click', function() {
+                openApprovePopup(pendingDrivers.pending_drivers[0].id);
+            });                }
+                notiWidget.style.display = 'block';
+            } else if (driversLength > 1) {
+                notification_count = "1+"; // More than one driver
+                driverName.innerText = pending_drivers.pending_drivers[0].name;
+                if (pending_drivers.pending_drivers[0].id) {
+                    showAllLink.addEventListener('click', function() {
+                openApprovePopup(pendingDrivers.pending_drivers[0].id);
+            });                }
+                notiWidget.style.display = 'block';
+            }
+        }
+
+        // ✅ Update notification count
+        notificationCount.innerText = notification_count;
+        function openApprovePopup(driverId, driverName) {
+        // Set form action dynamically
+        document.getElementById('approve-form').action = `/drivers/approve/${driverId}`;
+        document.getElementById('approve-msg').innerHTML = `Are you sure you want to approve ${driverName}?`
+        // Show popup
+        document.getElementById('approve-popup').classList.add('active');
+    }
+
+    function closeApprovePopup() {
+        // Hide popup
+        document.getElementById('approve-popup').classList.remove('active');
+    }
+
+    function openDeletePopup(driverId, driverName) {
+        // Set form action dynamically
+        document.getElementById('delete-form').action = `/drivers/delete/${driverId}`;
+        document.getElementById('delete-msg').innerHTML = `Are you sure you want to delete ${driverName}?`
+
+        // Show popup
+        document.getElementById('delete-popup').classList.add('active');
+    }
+
+    function closeDeletePopup() {
+        // Hide popup
+        document.getElementById('delete-popup').classList.remove('active');
+    }
+</script>
+{% endblock javascripts %}
